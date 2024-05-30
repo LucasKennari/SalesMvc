@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SalesWebMvc.Models;
+using SalesWebMvc.Models.ViewModels;
 using System.Diagnostics;
 
 namespace SalesWebMvc.Controllers
@@ -18,8 +18,11 @@ namespace SalesWebMvc.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Contact()
         {
+            // viewData é um conjunto de chave e valor
+            ViewData["Message"] = "Sua descricao da aplicacao da pagina";
+            ViewData["Email"] = "Lucas@gmail.com";
             return View();
         }
 
