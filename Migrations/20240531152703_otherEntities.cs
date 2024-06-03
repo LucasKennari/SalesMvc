@@ -6,11 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SalesWebMvc.Migrations
 {
     /// <inheritdoc />
-    public partial class otherEntities : Migration
+    public partial class OtherEntities : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Seller to ON");
+
             migrationBuilder.CreateTable(
                 name: "Seller",
                 columns: table => new
@@ -32,6 +34,9 @@ namespace SalesWebMvc.Migrations
                         principalTable: "Department",
                         principalColumn: "Id");
                 });
+            // migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Seller OFF");
+
+            migrationBuilder.Sql("SET IDENTITY_INSERT SalesRecord to ON");
 
             migrationBuilder.CreateTable(
                 name: "SalesRecord",
@@ -53,6 +58,7 @@ namespace SalesWebMvc.Migrations
                         principalTable: "Seller",
                         principalColumn: "Id");
                 });
+           // migrationBuilder.Sql("SET IDENTITY_INSERT dbo.SalesRecord OFF");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SalesRecord_SellerId",

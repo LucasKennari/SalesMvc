@@ -10,6 +10,8 @@ namespace SalesWebMvc.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Department to ON");
+
             migrationBuilder.CreateTable(
                 name: "Department",
                 columns: table => new
@@ -22,6 +24,7 @@ namespace SalesWebMvc.Migrations
                 {
                     table.PrimaryKey("PK_Department", x => x.Id);
                 });
+          //  migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Departments OFF");
         }
 
         /// <inheritdoc />

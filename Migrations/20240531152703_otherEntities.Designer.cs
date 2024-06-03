@@ -13,7 +13,7 @@ namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
     [Migration("20240531152703_otherEntities")]
-    partial class otherEntities
+    partial class OtherEntities
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
