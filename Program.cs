@@ -13,6 +13,7 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 
 
@@ -29,12 +30,13 @@ if (!app.Environment.IsDevelopment())
 else
 {
     app.UseDeveloperExceptionPage();
-   
-using (var scope = app.Services.CreateScope())
+
+	using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-
+        
     var seedingService = services.GetRequiredService<SeedingService>();
+      
         seedingService.Seed();
 
 }
