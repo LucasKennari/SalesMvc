@@ -11,7 +11,7 @@ namespace SalesWebMvc.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Seller to ON");
+           
 
             migrationBuilder.CreateTable(
                 name: "Seller",
@@ -34,9 +34,10 @@ namespace SalesWebMvc.Migrations
                         principalTable: "Department",
                         principalColumn: "Id");
                 });
-            // migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Seller OFF");
+			migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Seller ON");
+			// migrationBuilder.Sql("SET IDENTITY_INSERT dbo.Seller OFF");
 
-            migrationBuilder.Sql("SET IDENTITY_INSERT SalesRecord to ON");
+			
 
             migrationBuilder.CreateTable(
                 name: "SalesRecord",
@@ -58,9 +59,10 @@ namespace SalesWebMvc.Migrations
                         principalTable: "Seller",
                         principalColumn: "Id");
                 });
-           // migrationBuilder.Sql("SET IDENTITY_INSERT dbo.SalesRecord OFF");
+			migrationBuilder.Sql("SET IDENTITY_INSERT dbo.SalesRecord ON");
+			// migrationBuilder.Sql("SET IDENTITY_INSERT dbo.SalesRecord OFF");
 
-            migrationBuilder.CreateIndex(
+			migrationBuilder.CreateIndex(
                 name: "IX_SalesRecord_SellerId",
                 table: "SalesRecord",
                 column: "SellerId");

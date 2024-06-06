@@ -1,0 +1,8 @@
+1- desafio foi como resolver o problema que eu estava tendo com banco de dados, onde não conseguia se conectar.
+solucao: pesquisei de cabo a rabo sobre as conexoes onde o windows era a chave para conectar e conegui descobrir oque faltava.
+2 - maior desafio para alimentar o banco de dados, simplesmente não aceitava um "id"passado como parte do objeto, acabei tendo que alterar diretamente
+no banco de dados, cujo qual, não é uma boa prática. E no fim, o problema voltou de outra maneira...
+
+3 - o retorno do problema anterior em relacao ao Identity_insert, após modificar bruscamente a coluna ID no banco de dados
+quando se era criado algum novo dado apartir de um formulario, onde não se possuia um ID, veio entao o erro.
+ 
