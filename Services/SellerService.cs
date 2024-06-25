@@ -40,6 +40,7 @@ namespace SalesWebMvc.Services
 			var obj = await _context.Seller.FindAsync(id);
 			_context.Seller.Remove(obj);
 			await _context.SaveChangesAsync();
+
 			}catch(DbUpdateException error)
 			{
 				throw new IntegrityException(error.Message);
